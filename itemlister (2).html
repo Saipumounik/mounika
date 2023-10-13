@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style> 
+  header {
+            background-color: #1ad7f4;
+            color: #181010;
+            padding: 10px;
+            text-align: center;
+        }
+        #profile-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+          footer {
+            background-color: #1ad7f4;
+            color:#181010;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+  
+  .btn{
+        color:red;
+
+    }
+
+    .list-group-item
+    {
+        border: 2px solid red;
+        width:80%;
+        margin:5px;
+    }
+</style> 
+</head>
+<body>
+  <header>
+    <img id="profile-photo" src="profile.jpg" alt="Your Profile Photo">
+    <h1>SAIPU MOUNIKA</h1>
+    <p>Registration Number: 21MIS7083</p>
+</header>
+    
+
+    <div class="container">
+        <div class="col-md-6">
+            <h1 id="header-title">Item Lister</h1>
+        </div>
+    </div>
+ 
+  <div class="container">
+   <div id="main" class="card card-body">
+    <h2 class="title">Add Items</h2>
+    <form id="addForm" class="form-inline mb-3">
+      <input type="text" class="form-control mr-2" id="item">
+      <input type="submit" class="btn btn-dark" value="Submit">
+    </form>
+    <h2 class="title">Items</h2>
+    <ul id="items" class="list-group">
+      
+    </ul>
+   </div>
+  </div>
+  <footer>
+    <p>Contact Information: saipumounika3@gmail.com </p>
+    <p>9949306944</p>
+</footer>
+</body>
+
+
+
+  <script>
+      var form = document.getElementById('addForm');
+var itemList = document.getElementById('items');
+
+
+// Form submit event
+form.addEventListener('submit', addItem);
+// Delete event
+itemList.addEventListener('click', removeItem);
+// Filter event
+
+
+// Add item
+function addItem(e){
+  e.preventDefault();
+
+  // Get input value
+  var newItem = document.getElementById('item').value;
+
+  // Create new li element
+  var li = document.createElement('li');
+  // Add class
+  li.className = 'list-group-item';
+  // Add text node with input value
+  li.appendChild(document.createTextNode(newItem));
+
+  // Create del button element
+  var deleteBtn = document.createElement('button');
+
+  // Add classes to del button
+  deleteBtn.className = 'btn btn-danger btn-sm float-right delete';
+
+  // Append text node
+  deleteBtn.appendChild(document.createTextNode('X'));
+
+  // Append button to li
+  li.appendChild(deleteBtn);
+
+  // Append li to list
+  itemList.appendChild(li);
+}
+
+// Remove item
+function removeItem(e){
+  if(e.target.classList.contains('delete')){
+    if(confirm('Are You Sure?')){
+      var li = e.target.parentElement;
+      itemList.removeChild(li);
+    }
+  }
+}
+
+
+  </script>
+  </html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS GRID</title>
+    <style>
+        header {
+            background-color: #1ad7f4;
+            color: #181010;
+            padding: 10px;
+            text-align: center;
+        }
+        #profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+        footer {
+            background-color: #1ad7f4;
+            color:#181010;
+            text-align: center;
+            padding: 10px;
+            bottom: 0;
+            width: 100%;
+        }
+        #con {
+            display: grid;
+            border: 5px solid red;
+            grid-auto-flow: column;
+            grid-template-areas: 
+                "one two three"
+                "one four four"
+                "five six seven"
+                "eight eight seven";
+            grid-gap: 10px;
+            height: 100vh;
+        }
+        .boxes {
+            border: 2px solid black;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        #a { grid-area: one;
+        background-color: greenyellow; }
+        #b { grid-area: two; 
+            background-color: rgb(47, 92, 255);}
+        #c { grid-area: three; 
+            background-color: rgb(252, 12, 28);}
+        #d { grid-area: four;
+        background-color: aqua; }
+        #e { grid-area: five;
+            background-color: rgb(242, 227, 18); }
+        #f { grid-area: six; 
+            background-color: rgb(145, 14, 150);}
+        #g { grid-area: seven;
+            background-color: rgb(220, 102, 17); }
+        #h { grid-area: eight;
+            background-color: rgb(176, 11, 74); }
+        @media (max-width: 460px) {
+            #con {
+                grid-template-areas: 
+                    "one"
+                    "two"
+                    "three"
+                    "four"
+                    "five"
+                    "six"
+                    "seven"
+                    "eight";
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img id="profile-photo" src="profile.jpg" alt="Your Profile Photo">
+        <h1>SAIPU MOUNIKA</h1>
+        <p>Registration Number: 21MIC7083</p>
+    </header>
+    <div id="con">
+        <div class="boxes" id="a">1</div>
+        <div class="boxes" id="b">2</div>
+        <div class="boxes" id="c">3</div>
+        <div class="boxes" id="d">4</div>
+        <div class="boxes" id="e">5</div>
+        <div class="boxes" id="f">6</div>
+        <div class="boxes" id="g">7</div>
+        <div class="boxes" id="h">8</div>
+    </div>
+    <footer>
+        <p>Contact Information: saipumounika3@gmail.com </p>
+        <p>9949306944</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+     <style>
+        header {
+            background-color: #1ad7f4;
+            color: #181010;
+            padding: 10px;
+            text-align: center;
+        }
+        #profile-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        footer {
+            background-color: #1ad7f4;
+            color:#181010;
+            text-align: center;
+            padding: 10px;
+            bottom: 0;
+            width: 100%;
+        }
+        .c{
+            padding: 10px;
+        }
+    #con{
+        display: grid;
+        grid-auto-flow: column;
+    
+        /*grid-template-rows: 3fr 2fr 1fr 1fr;
+        grid-template-areas:'a1 b1 c1 d1' ; */
+        grid-template-areas:'h h h h'
+                           's m m m'
+                           's c d e'
+                           's f f f';
+        grid-gap:10px;
+        height: 100vh;
+    }
+    #a{
+        grid-area: h;
+        background-color: lightblue;
+    }
+    #b{
+        grid-area: s;
+        background-color: skyblue;
+    }
+    #c{
+        grid-area: m;
+        background-color: lightgreen;
+    }
+    #d{
+        grid-area: c;
+        background-color: green;
+    }
+    #e{
+        grid-area: d;
+        background-color: rgb(165, 207, 165);
+    }
+    #f{
+        grid-area:e;
+        background-color: rgb(84, 114, 84);
+    }
+    #g{
+        grid-area:f;
+        background-color: darkgreen;
+    }
+     </style>
+     </head>
+     <body>
+        <header>
+            <img id="profile-photo" src="profile.jpg" alt="Your Profile Photo">
+            <h1>SAIPU MOUNIKA</h1>
+            <p>Registration Number: 21MIS7083</p>
+        </header>
+        <div id="con">
+   <div class="c" id="a">Navbar</div>
+   <div class="c" id="b">Sidebar</div>
+   <div class="c" id="c">Main</div>
+   <div class="c" id="d">Content1</div>
+   <div class="c" id="e">Content2</div>
+   <div class="c" id="f">Content3</div>
+   <div class="c" id="g">Footer</div>
+    </div>
+    <footer>
+        <p>Contact Information: saipumounika3@gmail.com </p>
+        <p>9949306944</p>
+    </footer>
+        </body>
+        </html>
